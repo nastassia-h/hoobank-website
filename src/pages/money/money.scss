@@ -1,0 +1,62 @@
+@import '../../styles/main.scss';
+
+.money {
+   &__container {
+      max-width: 1230px;
+      margin: 0 auto;
+      padding: 30px;
+   }
+
+   &__row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      @include adaptiveValue('gap', 78, 50, 1);
+      @include adaptiveValue('margin-bottom', 160, 40, 1);
+   }
+
+   &__column {
+      flex: 1 1 45%;
+      position: relative;
+      z-index: 5;
+
+      &::before,
+      &::after {
+         z-index: 1;
+         content: '';
+         position: absolute;
+         width: 405px;
+         height: 471px;
+         left: -160%;
+         background: rgba(255, 255, 255, 0.6);
+         filter: blur(375px);
+      }
+
+      &::before {
+         background: rgba(255, 255, 255, 0.6);
+         filter: blur(375px);
+      }
+
+      &::after {
+
+         background: linear-gradient(90deg, #F4C4F3 0%, #FC67FA 100%);
+         filter: blur(450px);
+         border-radius: 200px;
+      }
+   }
+
+   &__article {
+      z-index: 5;
+      flex: 1 1 46%;
+   }
+
+   &__image {
+      z-index: 5;
+      flex: 1 1 46%;
+
+      img {
+         max-width: 100%;
+      }
+   }
+}
